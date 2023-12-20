@@ -21,6 +21,10 @@ html {
     var(--color-partner)
   );
 }
+.my-10 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
 /* Reset some default styles */
 * {
@@ -307,4 +311,29 @@ body {
   align-items: center;
   padding: 50px;
   color: var(--text-color);
+}
+
+.industries .cards {
+  max-width: 1200px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--bg-color);
+}
+
+.industries .cards .card {
+  padding: 12px 34px;
+  width: 250px;
+  height: 200px;
+  margin: 10px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+  cursor: pointer;
 }
