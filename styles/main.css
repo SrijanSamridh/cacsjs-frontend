@@ -1,50 +1,310 @@
-*{
-    margin: 0px;
-    padding: 0px;
+html {
+  scroll-behavior: smooth;
+}
+*:not(i) {
+  font-family: "Poppins", sans-serif;
 }
 
-:root{
-    --primary-color: #2FC765;
-    --color-partner:  #17CC16;
-    --secondary-color: #0A6B83;
-    --bg-color: #f2f2f2;
-    --text-color: #fff;
-    --text-hover-color: #333;
+:root {
+  --primary-color: #2fc765;
+  --color-partner: #17cc16;
+  --secondary-color: #0a6b83;
+  --bg-color: #ffffff;
+  --text-color: #fff;
+  --text-hover-color: #333;
 }
 
-body{
-    background-color: var(--bg-color);
+.gradient-color {
+  background-image: linear-gradient(
+    to bottom right,
+    var(--secondary-color),
+    var(--color-partner)
+  );
 }
 
-/* add navbar  */
-.navbar{
-    /* background-color: var(--primary-color); */
-    background-image: linear-gradient(to bottom right, var(--secondary-color), var(--color-partner));
-    padding: 0px;
-    height: 60px;
-    box-shadow: 0px 1px 3px rgba(0,0,0,0.1);
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.navbar ul{
+/* Set some global styles */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.navbar #logo {
+  height: 50px;
+}
+/* Navigation bar styles */
+.navbar {
+  width: 100%;
+  position: fixed;
+  background-image: linear-gradient(
+    to bottom right,
+    var(--secondary-color),
+    var(--color-partner)
+  );
+  color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.nav-links {
+  margin-top: 12px;
+  list-style: none;
+  text-align: right;
+}
+
+.nav-links li {
+  display: inline;
+  margin-left: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--text-hover);
+}
+
+.nav-links a.active {
+  color: var(--text-hover);
+}
+
+/* Hero section styles */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero .container {
+  height: 100vh;
+  width: 100%;
+  max-width: 1500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-col {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.description-text {
+  font-size: 12px;
+  margin-bottom: 12px;
+  text-align: left;
+  color: #3333336e;
+}
+
+.hero .btn {
+  display: inline-block;
+  background: var(--primary-color);
+  color: #fff;
+  /* width: 200px; */
+  padding: 12px 34px;
+  margin-bottom: 20px;
+  margin: 10px;
+  border-radius: 15px;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.hero-btns a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.hero .btn:hover {
+  background: var(--secondary-color);
+}
+
+.right-col {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-col img {
+  width: 90%;
+  height: 60%;
+  /* object-fit: ; */
+}
+
+/* Solution we offer */
+.solution {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 50px;
+}
+
+.solution .container {
+  max-width: 1200px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-color);
+}
+
+.section-title {
+  font-size: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.solution-cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.solution-card {
+  padding: 12px 34px;
+  width: 400px;
+  height: 400px;
+  margin: 10px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+}
+
+.solution-img {
+  width: 50%;
+  height: 50%;
+}
+
+.solution-text {
+  font-size: small;
+}
+
+.solution .btn {
+  display: inline-block;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 12px 34px;
+  margin-bottom: 20px;
+  margin: 10px;
+  border-radius: 15px;
+  align-items: center;
+  transition: background 0.3s;
+  text-decoration: none;
+}
+
+.solution-card{
     display: flex;
-    margin-left: 10%;
-    margin-right: 10%;
+    flex-direction: column;
     justify-content: space-evenly;
+}
+
+.solution-card:hover {
+  transform: scale(1.01);
+  transition: transform 0.3s;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* Service We Provide */
+.services {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 50px;
+}
+
+.services .container {
+  max-width: 1200px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-color);
+}
+
+.services .info_cards{
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    flex-direction: row;
 }
 
-.navbar ul li{
-    list-style: none;
-    padding: 10px 20px;
+.services .card{
+    padding: 12px 34px;
+    width: 250px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    cursor: pointer;
 }
 
-.navbar ul li a{
-    text-decoration: none;
-    color: var(--text-color);
-    font-size: 18px;
-    font-weight: 500;
+.services .card:hover{
+    transform: scale(1.01);
+    transition: transform 0.3s;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
-.navbar ul li a:hover{
-    color: var(--text-hover-color);
+
+/* INDUSTRIES OUR CLIENTS WORK IN */
+.industries {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  color: var(--text-color);
 }
