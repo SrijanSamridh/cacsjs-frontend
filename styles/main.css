@@ -109,6 +109,40 @@ body {
   color: var(--text-hover);
 }
 
+.navbar-mobile {
+  display: none;
+}
+
+/* Hamburger menu */
+@media (max-width: 768px) {
+  .navbar-mobile {
+    display: none;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    background-image: linear-gradient(
+      to bottom right,
+      var(--secondary-color),
+      var(--color-partner)
+    );
+    color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+  .nav-links {
+    margin-top: 20px;
+    display: none;
+  }
+  .nav-links li a{
+    color: #fff;
+    text-decoration: none;
+    }
+    .nav-links li {
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+    }
+}
+
 /* Hero section styles */
 .hero {
   display: flex;
@@ -175,6 +209,40 @@ body {
   /* object-fit: ; */
 }
 
+/* hero responsive */
+@media (max-width: 767px) {
+  .hero .container {
+    flex-direction: column;
+  }
+
+  .left-col {
+    width: 100%;
+    height: 100%;
+  }
+
+  .right-col {
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .description-text {
+    font-size: 10px;
+  }
+
+  .right-col img {
+    width: 100%;
+    /* height: 100%; */
+  }
+}
+
 /* Solution we offer */
 .solution {
   display: flex;
@@ -187,6 +255,7 @@ body {
 
 .solution .container {
   max-width: 1200px;
+  width: 100%;
   border-radius: 15px;
   display: flex;
   justify-content: center;
@@ -256,6 +325,44 @@ body {
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
+/* Solution We Offer responsive */
+@media (max-width: 767px) {
+  .solution-img {
+    width: 80%;
+    height: 80%;
+  }
+  .section-title {
+    font-size: 20px;
+  }
+  .solution h2 {
+    font-size: 15px;
+  }
+  .solution .solution-text {
+    font-size: 10px;
+  }
+  .solution .container {
+    flex-direction: column;
+    width: 100%;
+  }
+  .solution .solution-cards {
+    flex-direction: column;
+  }
+
+  .solution .solution-card {
+    width: 100%;
+    margin: 10px;
+  }
+
+  .solution-img {
+    width: 50%;
+    height: 50%;
+  }
+
+  .solution .btn {
+    width: 100%;
+  }
+}
+
 /* Service We Provide */
 .services {
   display: flex;
@@ -304,7 +411,27 @@ body {
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
-/* INDUSTRIES OUR CLIENTS WORK IN */
+/* SERVICES WE PROVIDE responsive */
+@media (max-width: 767px) {
+  .services .info_cards {
+    flex-direction: column;
+  }
+
+  .services .card {
+    width: 100%;
+    margin: 10px;
+  }
+
+  .services .card h3 {
+    font-size: 20px;
+  }
+
+  .services .card p {
+    font-size: 12px;
+  }
+}
+
+/* INDUSTRIES */
 .industries {
   display: flex;
   flex-direction: column;
@@ -349,6 +476,25 @@ body {
   margin-top: 10px;
   text-align: center;
   color: var(--text-hover-color);
+}
+
+/* INUDSTRIES responsive */
+@media (max-width: 767px) {
+  .industries .cards {
+    flex-direction: column;
+    padding: 10px;
+    margin-bottom: 0px;
+  }
+
+  .industries .cards .card {
+    width: 100%;
+    margin: 10px;
+  }
+
+  .industries-img {
+    width: 50%;
+    height: 50%;
+  }
 }
 
 /* Our team */
@@ -404,118 +550,221 @@ body {
   text-align: center;
 }
 
+/* Our team responsive */
+@media (max-width: 767px) {
+  .founder-card {
+    flex-direction: column;
+  }
+
+  .founder-card .card {
+    width: 100%;
+    margin: 10px;
+  }
+
+  .card-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .subtitle {
+    font-size: 10px;
+    margin: 10px;
+  }
+
+  .founder-card p {
+    font-size: 10px;
+  }
+
+  .founder-card .card h3 {
+    font-size: 20px;
+  }
+
+  .founder-card .card h4 {
+    font-size: 15px;
+  }
+
+  .founder-card .card h5 {
+    font-size: 12px;
+  }
+
+  .founder-card .card h6 {
+    font-size: 10px;
+  }
+}
+
 /* Footer */
 
 /* Footer */
 footer {
-    background-image: linear-gradient(to bottom right, var(--secondary-color), var(--color-partner));
-    padding: 50px;
-    color: var(--text-color);
+  background-image: linear-gradient(
+    to bottom right,
+    var(--secondary-color),
+    var(--color-partner)
+  );
+  padding: 50px;
+  color: var(--text-color);
 }
 
 footer .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-.footer-content div{
-    
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .footer-section {
-    flex: 1 1 300px;
-    margin-bottom: 30px;
+  flex: 1 1 300px;
+  margin-bottom: 30px;
 }
 
 .footer-section.about {
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    justify-content: space-between;
-    align-items: space-between;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: space-between;
+  align-items: space-between;
 }
 
 footer .logo {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .contact {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .contact span {
-    display: block;
-    margin-bottom: 10px;
+  display: block;
+  margin-bottom: 10px;
 }
 
 .socials {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .socials a {
-    margin: 0 10px;
-    color: var(--text-hover-color);
-    padding: 10px 15px;
-    background-color: var(--bg-color);
-    border-radius: 50%;
+  margin: 0 10px;
+  color: var(--text-hover-color);
+  padding: 10px 15px;
+  background-color: var(--bg-color);
+  border-radius: 50%;
 }
 
 .footer-section.links h2 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .footer-section.links ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .footer-section.links ul a {
-    color: var(--text-color);
-    text-decoration: none;
+  color: var(--text-color);
+  text-decoration: none;
 }
 
 .footer-section.links ul li {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .footer-section.contact-form h2 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .text-input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid var(--text-color);
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--text-color);
 }
 
 .contact-btn {
-    display: inline-block;
-    padding: 10px calc(40px + 20px);
-    background-color: var(--secondary-color);
-    color: var(--text-color);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  display: inline-block;
+  padding: 10px calc(40px + 20px);
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .footer-bottom {
-    text-align: center;
-    margin-top: 30px;
-    color: var(--text-hover-color);
+  text-align: center;
+  margin-top: 30px;
+  color: var(--text-hover-color);
 }
+/* FILEPATH: /Users/srijansamridh/Documents/WebDevelopment/cacsjs/styles/main.css */
+
+/* Add a media query for screens smaller than 768px */
+@media (max-width: 767px) {
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-section {
+    flex: 1 1 auto;
+    margin-bottom: 20px;
+  }
+
+  .footer-section.about {
+    align-items: center;
+  }
+
+  .footer-section.links ul li {
+    margin-bottom: 5px;
+  }
+
+  .text-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+
+  .contact-btn {
+    padding: 8px calc(30px + 15px);
+  }
+
+  .footer-section.links {
+    display: none;
+  }
+
+}
+
+/* Add a media query for screens smaller than 480px */
+@media (max-width: 479px) {
+  .footer-section.about {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section.links ul li {
+    margin-bottom: 3px;
+  }
+
+  .text-input {
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 6px;
+  }
+
+  .contact-btn {
+    padding: 6px calc(20px + 10px);
+  }
+}
+
+/* Add more media queries as needed for different screen sizes */
