@@ -58,9 +58,6 @@
       <!-- Hero Section -->
       <section class="hero">
         <div class="container">
-          <div class="right-col">
-            <img src="assets/images/8432.jpg" alt="" class="hero-img" />
-          </div>
           <div class="left-col">
             <img
               src="assets/images/ca_Chartered_Accountants_new_logo.png"
@@ -86,6 +83,9 @@
               >
               <a href="#" class="btn btn-secondary">Learn More</a>
             </div>
+          </div>
+          <div class="right-col">
+            <img src="assets/images/8432.jpg" alt="" class="hero-img" />
           </div>
         </div>
       </section>
@@ -245,39 +245,46 @@
       </section>
 
       <!-- Our Team -->
-      <section>
+      <section class="team-section">
         <div class="team">
-          <h1 class="section-tittle">OUR TEAM</h1>
+          <h1 class="section-title">OUR TEAM</h1>
           <p class="subtitle">
-            <b>C S J S</b> was founded by two of the most experience and
+            <b>C S J S</b> was founded by two of the most experienced and
             accomplished CAs in the city. You can read more about them below.
           </p>
           <div class="founder-card">
             <div class="card">
+                <div class="info-img">
               <img src="assets/images/CA2.01.png" alt="" class="card-img" />
               <h4>CA Chitesh Singla</h4>
               <h5>Founder & Managing Partner</h5>
-              <p>
+              </div>
+              <p class="limited-lines">
                 He graduated with a Bachelor of Commerce from Punjabi University
                 in 2015. He qualified as a CA in 2017. He worked as a CFO at
-                Modulus Cosmetics Private Limited. He has specialization in
+                Modulus Cosmetics Private Limited. He has specialization in
                 Statutory & Tax Audits, GST compliance & litigation matters,
                 direct tax consultancy, and opinions and has independently
                 appeared in many Income Tax cases before the Income Tax
                 Authorities, Company Law Matters, Corporate Structuring and Tax
                 Planning, Preparation of Budgets and Fund Management and
-                Financial Due Diligence. Currently, He is heading our Sangrur
+                Financial Due Diligence. Currently, He is heading our Sangrur
                 branch office.
               </p>
-              <a href="mailto:cachitesh@cacsjs.com">
-                <button class="btn btn-primary">Email Now</button>
-              </a>
+              <div>
+              <a href="mailto:cachitesh@cacsjs.com" class="btn btn-primary"
+                >Email Now</a
+              >
+            </div>
             </div>
             <div class="card">
-              <img src="assets/images/CA1.jpeg" alt="" class="card-img" />
-              <h4>CA JyotiSharan</h4>
-              <h5>Founder & Managing Partner</h5>
-              <p>
+                <div class="info-img">
+                    <img src="assets/images/CA1.jpeg" alt="" class="card-img" />
+                    <h4>CA JyotiSharan</h4>
+                    <h5>Founder & Managing Partner</h5>
+                </div>
+              
+              <p class="limited-lines">
                 He is a Fellow Member of the Institute of Chartered Accountants
                 of India. He qualified as a CA in 2017. He specializes in Audit
                 and Assurance, Financial Due Diligence, Company Law matters, and
@@ -286,9 +293,13 @@
                 Services, Information Technology, Aviation, Hospitality, etc.
                 Currently, He is heading our Barnala head office.
               </p>
-              <a href="mailto:cajyotisharan@cacsjs.com">
-                <button class="btn btn-primary">Email now</button>
-              </a>
+              <div>
+                <a
+                  href="mailto:cajyotisharan@cacsjs.com"
+                  class="btn btn-primary"
+                  >Email now</a
+                >
+              </div>
             </div>
           </div>
           <a href="#" rel="noopener noreferrer" class="btn btn-primary"
@@ -353,24 +364,38 @@
           <div class="footer-section contact-form">
             <h2>Contact Us</h2>
             <br />
-            <form action="index.html" method="post">
+            <form id="contactForm">
+              <input
+                type="text"
+                name="name"
+                id="name"
+                class="text-input contact-input"
+                placeholder="Full Name"
+                required
+              />
               <input
                 type="email"
                 name="email"
+                id="email"
                 class="text-input contact-input"
                 placeholder="Your email address..."
+                required
               />
               <input
-                type="number"
+                type="tel"
                 name="phone"
+                id="phone"
                 class="text-input contact-input"
                 placeholder="Phone Number"
+                required
               />
               <textarea
                 name="message"
+                id="message"
                 class="text-input contact-input"
                 maxlength="100"
                 placeholder="Your message..."
+                required
               ></textarea>
               <button type="submit" class="btn btn-big contact-btn">
                 <i class="fa fa-envelope"></i>
@@ -384,5 +409,36 @@
     </footer>
 
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const formData = new FormData(this);
+          const name = formData.get("name");
+          const email = formData.get("email");
+          const phone = formData.get("phone");
+          const message = formData.get("message");
+
+          fetch("http://localhost:8080/api/contact", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ name, email, phone, message }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              console.log(data);
+              alert("Message sent successfully!");
+              // You can redirect or show a success message here
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              alert("Something went wrong. Please try again later.");
+              // You can redirect or show an error message here
+            });
+        });
+    </script>
   </body>
 </html>
