@@ -71,7 +71,7 @@ body {
   height: 50px;
   border-radius: 50%;
 }
-.logo{
+.logo {
   height: 200px;
   border-radius: 50%;
 }
@@ -138,15 +138,15 @@ body {
     margin-top: 20px;
     display: none;
   }
-  .nav-links li a{
+  .nav-links li a {
     color: #fff;
     text-decoration: none;
-    }
-    .nav-links li {
-        display: block;
-        text-align: center;
-        margin: 10px 0;
-    }
+  }
+  .nav-links li {
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+  }
 }
 
 /* Hero section styles */
@@ -224,12 +224,12 @@ body {
 
   .left-col {
     width: 100%;
-    height: calc(100vh - 80vh);
+    height: 100%;
   }
 
   .right-col {
     width: 75%;
-    height: 100%;
+    height: calc(100vh - 50vh);
   }
 
   .hero h1 {
@@ -545,7 +545,7 @@ body {
   overflow-y: scroll;
 }
 
-.founder-card .card .info-img{
+.founder-card .card .info-img {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -588,10 +588,12 @@ body {
   }
 
   .limited-lines {
-    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    overflow-y: scroll;
+    text-overflow: ellipsis;
   }
 }
-
 
 /* Footer */
 
